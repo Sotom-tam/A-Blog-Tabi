@@ -1,0 +1,127 @@
+@font-face {
+    font-family: ClashDisplay;
+    src: url(./ClashDisplay_Complete/Fonts/Variable/ClashDisplay-Variable.ttf);
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: ClashDisplay;
+    background-color: #efdfca;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.newEntry {
+    font-family: ClashDisplay;
+    padding: 10px;
+    color: black;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: #efdfca;
+    border-radius: 20px;
+}
+
+.btn {
+    font-family: ClashDisplay;
+    padding: 5px;
+    border: none;
+    color: #934a13;
+    background-color: #efdfca;
+    border-radius: 20px;
+}
+
+.navbar {
+    position: fixed;
+    margin: 0;
+    background-color: white;
+    width: 100%;
+    height: 23vh;
+    display: flex;
+    align-items: center;
+}
+
+.navbar>div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+}
+
+.hero-content {
+    height: 120vh;
+    padding-left: 80px;
+    padding-right: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #3a3633;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.p-text {
+    width: 60%;
+}
+
+p {
+    text-align: center;
+    font-size: 1.0rem;
+    line-height: 25px;
+}
+
+.post-container {
+    padding-left: 80px;
+    padding-right: 80px;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+
+}
+
+.post {
+    overflow: hidden;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px #d6d3d1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    align-self: center;
+    width: 60%;
+    height: 25vh;
+}
+
+.post>h1 {
+    font-size: 2rem;
+    margin: 0;
+    text-align: start;
+
+}
+
+
+.post>div>p {
+    text-align: start;
+}
+
+.post>p {
+    margin: 0;
+    text-align: start;
+    line-height: 20px;
+}
+
+@media (max-width:"762px") {
+    .post-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
