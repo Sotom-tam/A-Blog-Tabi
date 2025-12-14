@@ -1,70 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tabi</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main>
-      <nav class="navbar">
-        <div>
-          <a href="./index.ejs" class="">
-            <!-- <img
-            src="Logo"
-            alt="Tabi Logo"
-          /> -->
-            Tabi</a
-          >
-          <form action="/createNewEntry" method="get">
-            <input class="newEntry" type="submit" value="New Entry" />
-          </form>
-        </div>
-      </nav>
-      <div class="hero-content">
-        <button class="newEntry">We're all on A Journey</button>
-        <h1>
-          The Most Recent Reflections on my Life and Experiences in the Past
-          year
-        </h1>
-        <div class="p-text">
-          <p>
-            You Can check out some mosts below They tell of different aspects
-            and situations that I've encountered in the Past year and share what
-            I was able to learn from them.<br />
-            Have a Good Read!
-          </p>
-        </div>
+<%- include("header.ejs") %>
+<div class="hero-content">
+  <button class="newEntry">We're all on A Journey</button>
+  <h1>
+    The Most Recent Reflections on my Life and Experiences in the Past year
+  </h1>
+  <div class="p-text">
+    <p>
+      You Can check out some mosts below They tell of different aspects and
+      situations that I've encountered in the Past year and share what I was
+      able to learn from them.<br />
+      Have a Good Read!
+    </p>
+  </div>
 
-        <hr />
-      </div>
-      <div class="post-container">
-        <div class="post">
-          <div>
-            <p>
-              <%= locals.date %> <button class="btn"><%= locals.tag %></button>
-            </p>
-          </div>
-          <h1><%= locals.title %></h1>
-          <p><%= locals.content %></p>
-        </div>
-        <div class="post">
-          <div>
-            <p><%= locals.date %></p>
-            <button class="btn">Growth</button>
-          </div>
-          <h1>TITLE OF POST</h1>
-          <p>
-            Content of Post
-            ndwnosninuibuybysvaubciunruicsncoiwnsiufbybdjnozdncqoaii
-            ndwnosninuibuybysvaubciunruicsncoiwnsiufbybdjnozdncqoaii
-            ndwnosninuibuybysvaubciunruicsncoiwnsiufbybdjnozdncqoaii
-          </p>
-        </div>
-      </div>
-      <%# I should write an if statement to include the new entry.ejs file %>
-    </main>
-    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+  <hr />
+</div>
+<div class="post-container">
+  <div class="post">
+    <div>
+      <p><%= locals.date %> <button class="btn"><%= locals.tag %></button></p>
+    </div>
+    <h1><%= locals.title %></h1>
+    <p><%= locals.content %></p>
+  </div>
+  <div class="post">
+    <div>
+      <p><%= locals.date %></p>
+      <button class="btn">Growth</button>
+    </div>
+    <h1>TITLE OF POST</h1>
+    <p>
+      Content of Post ndwnosninuibuybysvaubciunruicsncoiwnsiufbybdjnozdncqoaii
+      ndwnosninuibuybysvaubciunruicsncoiwnsiufbybdjnozdncqoaii
+      ndwnosninuibuybysvaubciunruicsncoiwnsiufbybdjnozdncqoaii
+    </p>
+  </div>
+</div>
+<%# I should write an if statement to include the new entry.ejs file %> <%-
+include("footer.ejs") %>

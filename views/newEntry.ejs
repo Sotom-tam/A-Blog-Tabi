@@ -1,23 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <form action="/createNewEntry" method="get">
-      <input class="newEntry" type="submit" value="New Entry" />
-    </form>
-    <form action="/createNewEntry" method="post">
+<%- include("header.ejs") %>
+<div class="hero-content">
+  <div class="entry-btn">
+    <img src="/img/back.png" alt="back arrow icon" />
+    <a class="btn" href="index.ejs"> Cancel</a>
+  </div>
+  <div>
+    <form action="/createNewEntry" method="post" class="create-entry-form">
       <label for="title">Title</label>
-      <input name="title" type="text" />
+      <input
+        name="title"
+        type="text"
+        placeholder="Enter Your Post Title"
+        class="entry-input title-input"
+      />
       <label for="content">Content</label>
-      <input name="content" type="text" />
-      <label for="tag">tag</label>
-      <input name="tag" type="text" />
-      <input class="newEntry" type="submit" value="save" />
+      <input
+        name="content"
+        type="text"
+        placeholder="Post Content"
+        class="entry-input"
+      />
+      <label for="tag">Tag</label>
+      <input
+        name="tag"
+        type="text"
+        placeholder="add tags seperated by commas "
+        class="entry-input tag-input"
+      />
+      <input class="newEntry" name="Save" type="submit" value="Save" />
     </form>
-  </body>
-</html>
+  </div>
+</div>

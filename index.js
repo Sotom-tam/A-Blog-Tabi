@@ -18,11 +18,21 @@ let month = [
   "December",
 ];
 let x = new Date();
-
 x.getDate();
 let date = month[x.getMonth()] + " " + x.getDate() + " " + x.getFullYear();
+let blogPost = [];
 
-function createNewEntry() {}
+function createNewEntry(req, res) {
+  let newEntry = {
+    date: date,
+    title: req.body["title"],
+    content: req.body["content"],
+    tag: req.body["tag"],
+  };
+  blogPost.push(newEntry);
+  console.log(blogPost);
+}
+
 app.use(express.urlencoded({ extended: "true" }));
 app.use(express.static("public"));
 app.use("/bootstrap", express.static("node_modules/bootstrap/dist"));
@@ -40,6 +50,8 @@ app.post("/creaTeNewEntry", (req, res) => {
     content: req.body["content"],
     tag: req.body["tag"],
   };
+  blogPost.push(newEntry);
+  console.log(blogPost);
   res.render("index.ejs", newEntry);
   console.log(newEntry);
 });

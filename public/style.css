@@ -3,12 +3,13 @@
     src: url(./ClashDisplay_Complete/Fonts/Variable/ClashDisplay-Variable.ttf);
 }
 
-body {
+body,
+main {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: ClashDisplay;
-    background-color: #efdfca;
+    background-color: #f7eee2;
 }
 
 a {
@@ -16,26 +17,31 @@ a {
     color: black;
 }
 
+
 .newEntry {
     font-family: ClashDisplay;
+    font-size: 1rem;
     padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     color: black;
     border: 2px solid rgb(0, 0, 0);
-    background-color: #efdfca;
+    background-color: #f7eee2;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .btn {
     font-family: ClashDisplay;
-    padding: 5px;
+    font-size: 1rem;
+    padding: 10px;
     border: none;
     color: #934a13;
-    background-color: #efdfca;
+    background-color: #f7eee2;
     border-radius: 20px;
 }
 
 .navbar {
-    position: fixed;
     margin: 0;
     background-color: white;
     width: 100%;
@@ -53,7 +59,7 @@ a {
 }
 
 .hero-content {
-    height: 120vh;
+    height: 100vh;
     padding-left: 80px;
     padding-right: 80px;
     display: flex;
@@ -88,6 +94,11 @@ p {
 
 }
 
+img {
+    width: 24px;
+    height: 24px;
+}
+
 .post {
     overflow: hidden;
     margin: 10px;
@@ -119,6 +130,55 @@ p {
     text-align: start;
     line-height: 20px;
 }
+
+.entry-btn {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.entry-input {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    height: 20vh;
+    border: 1px solid #3a3633;
+    background-color: white;
+    color: #934a13;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+
+}
+
+.title-input {
+    font-size: 1.5rem;
+    height: 10vh;
+    background-color: inherit;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 2px solid #934a13;
+}
+
+.tag-input {
+    height: 8vh;
+}
+
+.hero-content>div {
+    width: 80%;
+}
+
+.create-entry-form {
+    margin: 40px 0px 40px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.create-entry-form>label {
+    color: #3a3633;
+}
+
 
 @media (max-width:"762px") {
     .post-container {
