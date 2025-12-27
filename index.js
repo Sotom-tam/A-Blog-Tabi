@@ -18,18 +18,26 @@ let month = [
   "December",
 ];
 let x = new Date();
+let numDate = Number(x.getMonth() + 1) + x.getDate() + x.getFullYear();
 let date = month[x.getMonth()] + " " + x.getDate() + " " + x.getFullYear();
 let y = new Date("2025-11-23");
 let tag = "God,Growing,Process,Faith".split(",");
+
 let blogPost = [
   {
-    // id:
-    //   "post-" +
-    //   Number(new Date("2025-12-11").getMonth() + 1) +
-    //   "-" +
-    //   +new Date("2025-12-11").getDate() +
-    //   "-" +
-    //   +new Date("2025-12-11").getFullYear(),
+    id: "post-2064",
+    date: "December 27 2025",
+    title: "Hey, Welcome",
+    content:
+      "I have finished all the basic features that this blog website should contain",
+    tag: ["Welcome", "hey", "firstpost"],
+  },
+  {
+    id:
+      "post-" +
+      Number(new Date("2025-12-11").getMonth() + 1) +
+      new Date("2025-12-11").getDate() +
+      new Date("2025-12-11").getFullYear(),
     date:
       month[new Date("2025-12-11").getMonth()] +
       " " +
@@ -42,13 +50,7 @@ let blogPost = [
     tag: tag,
   },
   {
-    // id:
-    //   "post-" +
-    //   Number(y.getMonth() + 1) +
-    //   "-" +
-    //   +y.getDate() +
-    //   "-" +
-    //   +y.getFullYear(),
+    id: "post-" + Number(y.getMonth() + 1) + y.getDate() + y.getFullYear(),
     date: month[y.getMonth()] + " " + y.getDate() + " " + y.getFullYear(),
     title: "Who is God?",
     content:
@@ -56,13 +58,11 @@ let blogPost = [
     tag: tag,
   },
   {
-    // id:
-    //   "post-" +
-    //   Number(new Date("2025-12-18").getMonth() + 1) +
-    //   "-" +
-    //   +new Date("2025-12-18").getDate() +
-    //   "-" +
-    //   +new Date("2025-12-18").getFullYear(),
+    id:
+      "post-" +
+      Number(new Date("2025-12-18").getMonth() + 1) +
+      new Date("2025-12-18").getDate() +
+      new Date("2025-12-18").getFullYear(),
     date:
       month[new Date("2025-12-18").getMonth()] +
       " " +
@@ -75,16 +75,16 @@ let blogPost = [
     tag: tag,
   },
 ];
-function createNewEntry(req, res) {
-  let newEntry = {
-    date: date,
-    title: req.body["title"],
-    content: req.body["content"],
-    tag: req.body["tag"].split(","),
-  };
-  blogPost.push(newEntry);
-  console.log(blogPost);
-}
+// function createNewEntry(req, res) {
+//   let newEntry = {
+//     date: date,
+//     title: req.body["title"],
+//     content: req.body["content"],
+//     tag: req.body["tag"].split(","),
+//   };
+//   blogPost.push(newEntry);
+//   console.log(blogPost);
+// }
 
 app.use(express.urlencoded({ extended: "true" }));
 app.use(express.static("public"));
@@ -100,20 +100,23 @@ app.get("/createNewEntry", (req, res) => {
 });
 app.post("/createNewEntry", (req, res) => {
   let newEntry = {
-    // id: `post-${date}`,
+    id: `post-${numDate}`,
     date: date,
     title: req.body["title"],
     content: req.body["content"],
-    tag: req.body["tag"],
+    tag: req.body["tag"].split(","),
   };
   blogPost.unshift(newEntry);
+  console.log(blogPost);
   res.render("index.ejs", {
     posts: blogPost,
   });
 });
-
+app.get("/readingView", (req, res) => {
+  const postId = req.query["post-id"];
+  const post = blogPost.find((element) => element.id === postId);
+  res.render("readingView.ejs", { post });
+});
 app.listen(port, () => {
   console.log("Listening at Port 3000");
 });
-// let str = "LHo,hdl,ho";
-// console.log(str.split(","), tag);

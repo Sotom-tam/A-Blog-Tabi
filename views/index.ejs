@@ -19,13 +19,20 @@
   <% posts.forEach(post => { %>
   <div class="post-holder">
     <div class="post">
-      <div>
-        <p>
-          <%= post.date %>
-          <button class="btn"><%= post.tag %></button>
-        </p>
+      <div class="other">
+        <%= post.date %> <% post.tag.forEach(element => { %>
+        <button class="btn"><%= element %></button>
+        <% }) %>
+        <div>
+          <img src="/img/pen.png" alt="pen icon for editing" />
+          <img src="/img/empty.png" alt="trash icon for deleting" />
+        </div>
       </div>
-      <h1><%= post.title %></h1>
+      <form action="/readingView" method="GET">
+        <input type="hidden" name="post-id" value="<%= post.id %>" />
+        <button class="title" type="submit"><%= post.title %></button>
+      </form>
+
       <div class="underline"></div>
       <p><%= post.content %></p>
     </div>

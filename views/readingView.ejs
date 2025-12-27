@@ -1,0 +1,16 @@
+<%- include("header.ejs") %>
+<div class="reading-view">
+  <div>
+    <h1><%= post.title %></h1>
+    <form action="/" method="GET">
+      <img src="/img/back.png" alt="back arrow icon" />
+      <button type="submit" class="btn" value="Back">Back</button>
+    </form>
+  </div>
+
+  <div class="content-holder">
+    <p><%= post.content %></p>
+  </div>
+</div>
+
+<%- include("footer.ejs") %>
