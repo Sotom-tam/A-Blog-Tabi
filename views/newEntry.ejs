@@ -1,8 +1,10 @@
 <%- include("header.ejs") %>
 <div class="hero-content">
   <div class="entry-btn">
-    <img src="/img/back.png" alt="back arrow icon" />
-    <a class="btn" href="index.ejs"> Cancel</a>
+    <form action="/" method="GET">
+      <img src="/img/back.png" alt="back arrow icon" />
+      <input type="submit" class="btn" value="Cancel" />
+    </form>
   </div>
   <div>
     <form action="/createNewEntry" method="post" class="create-entry-form">
@@ -14,12 +16,14 @@
         class="entry-input title-input"
       />
       <label for="content">Content</label>
-      <input
+      <textarea
+        rows="10"
         name="content"
         type="text"
-        placeholder="Post Content"
+        placeholder="Write your post here.."
         class="entry-input"
-      />
+      ></textarea>
+
       <label for="tag">Tag</label>
       <input
         name="tag"

@@ -16,25 +16,21 @@
   <hr />
 </div>
 <div class="post-container">
-  <div class="post">
-    <div>
-      <p><%= locals.date %> <button class="btn"><%= locals.tag %></button></p>
+  <% posts.forEach(post => { %>
+  <div class="post-holder">
+    <div class="post">
+      <div>
+        <p>
+          <%= post.date %>
+          <button class="btn"><%= post.tag %></button>
+        </p>
+      </div>
+      <h1><%= post.title %></h1>
+      <div class="underline"></div>
+      <p><%= post.content %></p>
     </div>
-    <h1><%= locals.title %></h1>
-    <p><%= locals.content %></p>
   </div>
-  <div class="post">
-    <div>
-      <p><%= locals.date %></p>
-      <button class="btn">Growth</button>
-    </div>
-    <h1>TITLE OF POST</h1>
-    <p>
-      Content of Post ndwnosninuibuybysvaubciunruicsncoiwnsiufbybdjnozdncqoaii
-      ndwnosninuibuybysvaubciunruicsncoiwnsiufbybdjnozdncqoaii
-      ndwnosninuibuybysvaubciunruicsncoiwnsiufbybdjnozdncqoaii
-    </p>
-  </div>
+  <% }) %>
 </div>
 <%# I should write an if statement to include the new entry.ejs file %> <%-
 include("footer.ejs") %>

@@ -34,6 +34,7 @@ a {
 .btn {
     font-family: ClashDisplay;
     font-size: 1rem;
+    cursor: pointer;
     padding: 10px;
     border: none;
     color: #934a13;
@@ -59,7 +60,7 @@ a {
 }
 
 .hero-content {
-    height: 100vh;
+    height: 120vh;
     padding-left: 80px;
     padding-right: 80px;
     display: flex;
@@ -99,8 +100,7 @@ img {
     height: 24px;
 }
 
-.post {
-    overflow: hidden;
+.post-holder {
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -110,25 +110,47 @@ img {
     border-radius: 10px;
     align-self: center;
     width: 60%;
-    height: 25vh;
+    height: 30vh;
 }
 
-.post>h1 {
+.post-holder>.post {
+    overflow: hidden;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.post-holder>.post>p {
+    line-height: 30px;
+    text-align: left;
+}
+
+.post-holder>.post>h1 {
     font-size: 2rem;
     margin: 0;
     text-align: start;
-
 }
 
+.post-holder>.post>h1:hover {
+    text-decoration: underline #3a3633;
+}
 
-.post>div>p {
+.post-holder>div>p {
     text-align: start;
 }
 
-.post>p {
+.post-holder>p {
     margin: 0;
     text-align: start;
     line-height: 20px;
+}
+
+.underline {
+    width: 40px;
+    height: 1px;
+    background-color: #934a13;
+    border-radius: 1px;
 }
 
 .entry-btn {
@@ -141,6 +163,7 @@ img {
     margin-top: 20px;
     margin-bottom: 50px;
     height: 20vh;
+    font-family: ClashDisplay;
     border: 1px solid #3a3633;
     background-color: white;
     color: #934a13;
@@ -158,6 +181,12 @@ img {
     border: none;
     border-radius: 0px;
     border-bottom: 2px solid #934a13;
+}
+
+.title-input:focus {
+    border: none;
+    border-bottom: 2px solid #934a13;
+    outline: none;
 }
 
 .tag-input {
