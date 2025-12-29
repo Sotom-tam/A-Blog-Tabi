@@ -1,0 +1,49 @@
+<%- include("header.ejs") %>
+<div class="reading-view">
+  <div>
+    <form action="/" method="GET">
+      <img src="/img/back.png" alt="back arrow icon" />
+      <button type="submit" class="btn" value="Back">Back</button>
+    </form>
+  </div>
+
+  <div class="content-holder">
+    <form action="/editPost" method="post" class="create-entry-form">
+      <label for="title">Title</label>
+      <textarea
+        name="title"
+        type="text"
+        rows="1"
+        placeholder="<%= post.title %>"
+        class="entry-input title-input"
+      >
+<%= post.title %></textarea
+      >
+      <input type="hidden" name="post-id" value="<%= post.id %>" />
+      <label for="content">Content</label>
+      <textarea
+        rows="200"
+        name="content"
+        type="text"
+        placeholder="Write your post here.."
+        class="entry-input"
+      >
+<%= post.content%></textarea
+      >
+
+      <label for="tag">Tag</label>
+      <textarea
+        name="tag"
+        rows="1"
+        type="text"
+        placeholder="<%= post.tag %> "
+        class="entry-input tag-input"
+      >
+<%= post.tag %></textarea
+      >
+
+      <input class="newEntry" name="Save" type="submit" value="Save" />
+    </form>
+  </div>
+</div>
+<%- include("footer.ejs") %>

@@ -1,0 +1,14 @@
+<%- include("header.ejs") %>
+<div class="post-container">
+  <div class="popover">
+    <p>Are you sure you want to delete this Post ?</p>
+    <div>
+      <form action="/deletePost" method="POST">
+        <button class="btn">Yes</button>
+      </form>
+      <form action="/" method="POST">
+        <button class="btn">No &nbsp;</button>
+      </form>
+    </div>
+  </div>
+</div>

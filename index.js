@@ -1,6 +1,4 @@
 import express from "express";
-import bodyParser from "body-parser";
-
 const app = express();
 const port = 3000;
 let month = [
@@ -116,6 +114,32 @@ app.get("/readingView", (req, res) => {
   const postId = req.query["post-id"];
   const post = blogPost.find((element) => element.id === postId);
   res.render("readingView.ejs", { post });
+});
+app.get("/deletePost", (req, res) => {
+  const postId = req.query["post-id"];
+  const post = blogPost.find((element) => element.id === postId);
+  console.log(blogPost.indexOf(post));
+
+  blogPost.splice(blogPost.indexOf(post), 1);
+  res.render("index.ejs", { post: blogPost });
+});
+app.get("/editPost", (req, res) => {
+  const postId = req.query["post-id"];
+  const post = blogPost.find((element) => element.id === postId);
+  res.render("editingView.ejs", { post });
+});
+app.post("/editPost", (req, res) => {
+  const postId = req.body["post-id"];
+  let editEntry = {
+    id: req.body["post-id"],
+    date: date,
+    title: req.body["title"],
+    content: req.body["content"],
+    tag: req.body["tag"].split(","),
+  };
+  let post = blogPost.find((element) => element.id === postId);
+  blogPost[blogPost.indexOf(post)] = editEntry;
+  res.render("index.ejs", { posts: blogPost });
 });
 app.listen(port, () => {
   console.log("Listening at Port 3000");

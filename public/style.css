@@ -100,7 +100,8 @@ img {
     height: 24px;
 }
 
-.post-holder {
+.post-holder,
+.content-holder {
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -118,7 +119,33 @@ img {
     display: flex;
     align-items: start;
     flex-direction: column;
-    cursor: pointer;
+
+}
+
+.post-holder>.post .other {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.post-holder>.post>.other .side {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.side button {
+    border-radius: 5px;
+    padding: 5px 8px;
+    margin: 0px 5px;
+
+}
+
+.side img {
+    width: 20px;
+    height: 20px;
 }
 
 .post-holder>.post>p {
@@ -126,14 +153,23 @@ img {
     text-align: left;
 }
 
-.post-holder>.post>h1 {
+.post-holder>.post>form>.title {
+    font-family: ClashDisplay;
+    padding: 0;
+    color: #3a3633;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
     font-size: 2rem;
     margin: 0;
     text-align: start;
 }
 
-.post-holder>.post>h1:hover {
-    text-decoration: underline #3a3633;
+.post-holder>.post>form>.title:hover {
+
+    border-bottom: solid 2px #934a13;
+
 }
 
 .post-holder>div>p {
@@ -208,9 +244,58 @@ img {
     color: #3a3633;
 }
 
+.reading-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
 
-@media (max-width:"762px") {
-    .post-container {
-        grid-template-columns: 1fr 1fr;
-    }
+.reading-view p {
+    text-align: justify;
+}
+
+.content-holder {
+    height: inherit;
+
+}
+
+
+
+#popover {
+    display: flex;
+    display: none;
+    position: sticky;
+    left: 34%;
+    top: 50%;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    align-self: center;
+    width: 30%;
+    height: 30vh;
+}
+
+.popover>div {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.popover div form {
+    margin: 20px;
+}
+
+.popover div form button {
+    width: 150%;
+    text-align: center;
+}
+
+textarea {
+    height: 10000px;
 }
